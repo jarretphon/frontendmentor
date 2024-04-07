@@ -35,6 +35,10 @@ How the desktop preview card component looks like:
 How the mobile preview card component looks like:
 ![Mobile](./screenshots/Frontend%20Mentor%20_%20Product%20preview%20card%20component%20-%20mobile.png)
 
+### Links
+
+- Live Site URL: [live site](https://jarretphon.github.io/frontendmentor/product-preview-card/)
+
 ## My process
 
 ### Built with
