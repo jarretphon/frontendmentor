@@ -21,8 +21,10 @@
   <main>
     <div class="card grid-flow">
       <div class="img-container">
-        <img class="desktop-pdt-img" src="images/image-product-desktop.jpg" alt="desktop-pdt-img">
-        <img class="mobile-pdt-img" src="images/image-product-mobile.jpg" alt="mobile-pdt-img">
+        <picture>
+          <source media="(min-width: 500px)" class="desktop-pdt-img" srcset="images/image-product-desktop.jpg" alt="desktop-pdt-img">
+          <img class="mobile-pdt-img" src="images/image-product-mobile.jpg" alt="mobile-pdt-img">
+        </picture>
       </div>
       
       <div class="pdt-info">
@@ -46,3 +48,4 @@
   
 </body>
 </html>
+
