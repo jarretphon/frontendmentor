@@ -58,14 +58,6 @@ body{
     overflow: hidden;
 }
 
-.desktop-pdt-img{
-    display: none;
-}
-
-.mobile-pdt-img{
-    display: block;
-}
-
 .pdt-info{
     padding: var(--padding);
     background: hsl(var(--clr-pdt-bg-hsl));
@@ -136,14 +128,6 @@ body{
     .card{
         max-width: 550px;
         grid-template-columns: 1fr 1fr;
-    }
-
-    .mobile-pdt-img{
-        display: none;
-    }
-
-    .desktop-pdt-img{
-        display: block;
     }
 
     .pdt-info{
