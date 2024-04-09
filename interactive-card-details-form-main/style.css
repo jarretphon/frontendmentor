@@ -1,0 +1,141 @@
+:root{
+    --clr-active-input-border: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    --clr-error: hsl(0, 100%, 66%);
+    --clr-placeholder-text: hsl(270, 3%, 87%); /*light grayish violet*/
+    --clr-primary-text: hsl(279, 6%, 55%); /*dark grayish violet*/
+    --clr-primary-bg: hsl(0, 0%, 100%); /*white*/
+    --clr-primary-btn: hsl(278, 68%, 11%); /*very dark violet*/
+
+    --fw--regular: 500;
+
+    --fs-200: 0.5em;
+    --fs-300: 1.125em;
+    --fs-400: 1.25em;
+    --fs-500: 1.375em;
+    --fs-600: 1.5em;
+}
+
+*{
+    margin: 0;
+}
+
+*::before,
+*::after{
+    box-sizing: border-box;
+    font: inherit;
+}
+
+img,
+svg{
+    display: block;
+    max-width: 100%;
+}
+
+
+    /*********************
+            Layout
+    *********************/
+body{
+    font-family: "Space Grotesk";
+    font-size: var(--fs-300);
+    font-weight: var(--fw--regular);
+    background-image: url(images/bg-main-mobile.png);
+    background-size: 100vw auto;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    order: 2;
+}
+
+aside{
+    order: 1;
+}
+
+.complete-state{
+    display: none;
+}
+
+@media (min-width: 500px) {
+    body{
+        background-image: url(images/bg-main-desktop.png);
+        background-size: auto;
+        min-height: 100vh;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+    /*********************
+            Card
+    *********************/
+
+.card{
+    width: 75%;
+    max-width: 280px;
+}
+
+.card-front, .card-back{
+    position: relative;
+}
+
+.card-logo, .card-details{
+    position: absolute;
+}
+
+.card-logo{
+    width: 20%;
+    top: 1em;
+    left: 1em;
+}
+
+.card-details{
+    bottom: 1em;
+    left: 1em;
+    color: var(--clr-primary-bg);
+
+    width: 90%;
+    max-width: 90%;
+}
+
+.num-block{
+    margin-right: 0.4em;
+    letter-spacing: 2px;
+}
+
+.card-info{
+    font-size: var(--fs-200);
+    margin-top: 1.25em;
+    letter-spacing: 1px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-holder{
+    text-transform: uppercase;
+}
+
+.card-expiry{
+    margin-right: 1em;
+}
+
+.card-cvv{
+    position: absolute;
+    top: 46%;
+    right: 12%;
+    color: var(--clr-primary-bg);
+    font-size: var(--fs-200);
+    letter-spacing: 1px;
+}
+
+@media (min-width: 500px) {
+    .card{
+        width: 90%;
+        max-width: none;
+    }
+}
