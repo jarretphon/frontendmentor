@@ -1,18 +1,19 @@
 :root{
-    --clr-active-input-border: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    --clr-active-input-border: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     --clr-error: hsl(0, 100%, 66%);
-    --clr-placeholder-text: hsl(270, 3%, 87%); /*light grayish violet*/
-    --clr-primary-text: hsl(279, 6%, 55%); /*dark grayish violet*/
+    --clr-secondary-text: hsl(270, 3%, 87%); /*light grayish violet*/
+    --clr-primary-placeholder: hsl(279, 6%, 55%); /*dark grayish violet*/
     --clr-primary-bg: hsl(0, 0%, 100%); /*white*/
-    --clr-primary-btn: hsl(278, 68%, 11%); /*very dark violet*/
+    --clr-primary-text: hsl(278, 68%, 11%); /*very dark violet*/
 
     --fw--regular: 500;
 
-    --fs-200: 0.5em;
-    --fs-300: 1.125em;
-    --fs-400: 1.25em;
-    --fs-500: 1.375em;
-    --fs-600: 1.5em;
+    --fs-100: 0.65em;
+    --fs-200: 0.75em;
+    --fs-300: 1em;
+    --fs-400: 1.125em;
+    --fs-500: 1.25em;
+    --fs-600: 1.375em;
 }
 
 *{
@@ -40,11 +41,13 @@ body{
     font-size: var(--fs-300);
     font-weight: var(--fw--regular);
     background-image: url(images/bg-main-mobile.png);
+    background-color: var(--clr-primary-bg);
     background-size: 100vw auto;
     background-repeat: no-repeat;
 
     display: flex;
     flex-direction: column;
+    gap: 1em;
 }
 
 main{
@@ -53,6 +56,28 @@ main{
 
 aside{
     order: 1;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+    margin: 0 auto;
+}
+
+.card-front{
+    order: 2;
+
+    position: absolute;
+    left: 1em;
+    bottom: 1.75em;
+}
+
+.card-back{
+    order: 1;
+    align-self: flex-end;
+    position: absolute;
+    top: 2.4em;
+    right: 1em;
 }
 
 .complete-state{
@@ -76,7 +101,9 @@ aside{
 
 .card{
     width: 75%;
-    max-width: 280px;
+    max-width: 282px;
+    color: var(--clr-primary-bg);
+    letter-spacing: 1px;
 }
 
 .card-front, .card-back{
@@ -94,43 +121,33 @@ aside{
 }
 
 .card-details{
+    width: 88%;
+    max-width: 260px;
+
     bottom: 1em;
     left: 1em;
-    color: var(--clr-primary-bg);
-
-    width: 90%;
-    max-width: 90%;
 }
 
 .num-block{
-    margin-right: 0.4em;
+    font-size: var(--fs-400);
+    margin-right: 0.5em;
     letter-spacing: 2px;
 }
 
 .card-info{
-    font-size: var(--fs-200);
+    font-size: var(--fs-100);
     margin-top: 1.25em;
-    letter-spacing: 1px;
+    text-transform: uppercase;
 
     display: flex;
     justify-content: space-between;
 }
 
-.card-holder{
-    text-transform: uppercase;
-}
-
-.card-expiry{
-    margin-right: 1em;
-}
-
 .card-cvv{
     position: absolute;
-    top: 46%;
-    right: 12%;
-    color: var(--clr-primary-bg);
-    font-size: var(--fs-200);
-    letter-spacing: 1px;
+    top: 45%;
+    right: 13%;
+    font-size: var(--fs-100);
 }
 
 @media (min-width: 500px) {
@@ -138,4 +155,76 @@ aside{
         width: 90%;
         max-width: none;
     }
+}
+
+    /*********************
+            Form
+    *********************/
+
+.card-detail-form{
+    color: var(--clr-primary-text);
+    width: 88%;
+    margin: auto;
+    gap: 1.5em;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-exp-container{
+    width: 44%;
+}
+
+.card-cvc-container{
+    width: 55%;
+}
+
+.exp-month, .exp-year{
+    width: 35%;
+    margin-right: 0.5em;
+}
+
+.cfm-btn{
+    font-family: "Space Grotesk";
+    font-weight: var(--fw--regular);
+    background-color: var(--clr-primary-text);
+    color: var(--clr-primary-bg);
+    padding: 1em;
+    border: none;
+    border-radius: 8px;
+}
+
+label{
+    margin-bottom: 0.75em;
+    text-transform: uppercase;
+    font-size: var(--fs-200);
+    font-weight: var(--fw--regular);
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+input{
+    padding: 0.75em 1em;
+    border-radius: 8px;
+    border: 1px solid var(--clr-secondary-text);
+}
+
+input:active, input:focus{
+    background: linear-gradient(var(--clr-primary-bg), var(--clr-primary-bg)) padding-box, var(--clr-active-input-border) border-box;
+    border: 1px solid transparent;
+}
+
+input::placeholder{
+    font-size: var(--fs-400);
+    font-family: "Space Grotesk";
+    color: var(--clr-secondary-text);
+    font-weight: var(--fw--regular);
+    letter-spacing: 1px;
 }

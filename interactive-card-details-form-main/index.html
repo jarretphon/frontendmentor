@@ -20,46 +20,54 @@
 <body>
 
   <main>
-    <form class="card-detail-form">
-      <div class="form-field">
+    <form class="card-detail-form flex-col">
+
+      <div class="form-field flex-col">
         <label class="form-field-label" for="cardholder-name">Cardholder Name</label>
         <input type="text" placeholder="e.g. Jane Appleseed" id="form-holder-name">
       </div>
       
-      <div class="form-field">
+      <div class="form-field flex-col">
         <label class="form-field-label" for="cardholder-name">Card Number</label>
         <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="form-card-num">
       </div>
       
-      <div class="form-field">
-        <div>
+      <div class="form-field flex-row">
+
+        <div class="card-exp-container flex-col">
           <label class="form-field-label" for="form-card-exp">Exp. Date (MM/YY)</label>
-          <div class="form-card-exp" id="form-card-exp">
+          <div class="form-card-exp flex-row" id="form-card-exp">
             <input class="exp-month" type="number" placeholder="MM">
             <input class="exp-year" type="number" placeholder="YY">
           </div>
         </div>
         
-        <div>
+        <div class="card-cvc-container flex-col">
           <label class="form-field-label" for="form-card-cvc">CVC</label>
           <input class="form-card-cvc" id="form-card-cvc" type="text" placeholder="e.g. 123">
         </div>
+
       </div>
-      
+    
       <button class="cfm-btn" type="submit">Confirm</button>
     </form>
   </main>
   
   <aside>
+
     <div class="card card-front">
+
       <img class="card-front-img" src="images/bg-card-front.png" alt="Card front">
       <img class="card-logo" src="images/card-logo.svg" alt="logo">
+
       <div class="card-details">
         <p class="card-num"><span class="num-block">0000</span><span class="num-block">0000</span><span class="num-block">0000</span><span class="num-block">0000</span></p>
+        
         <div class="card-info">
           <span class="card-holder">Jane Appleseed</span>
           <span class="card-expiry">00/00</span>
         </div>
+        
       </div>
       
     </div>
